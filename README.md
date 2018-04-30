@@ -26,7 +26,7 @@ These dependencies are required only if you use a `powershell` console
 - [`Get-ChildItemColor`](https://github.com/joonro/Get-ChildItemColor)
 
 ```powershell
-Install-Module oh-my-posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser
 Install-Module posh-git -AllowClobber -Scope CurrentUser
 Install-Module Get-ChildItemColor -Scope CurrentUser
 ```
