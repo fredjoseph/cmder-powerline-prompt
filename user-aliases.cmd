@@ -17,3 +17,4 @@ cmderr=cd /d "%CMDER_ROOT%"
 ~=cd %HOMEPATH%
 ll=ls -gohlat --show-control-chars -F --color $*
 treeall=tree /a /f
+scoopif = powershell "Get-Content $* | sls '(.+) \(' |% { $_.matches.groups[1].value } |% {scoop install $_}" rem installs previously exported scoop apps
