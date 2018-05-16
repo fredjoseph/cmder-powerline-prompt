@@ -19,3 +19,4 @@ ll=ls -gohlat --show-control-chars -F --color $*
 treeall=tree /a /f
 scoopif=powershell "Get-Content $* | sls '(.+) \(' |% { $_.matches.groups[1].value } |% {scoop install $_}" rem installs previously exported scoop apps
 gpa=%GIT_INSTALL_ROOT%/usr/bin/find . -mindepth 1 -maxdepth 1 -type d -execdir test -d '{}/.git' ; -exec echo -e "\n{}" ; -exec git --git-dir="{}"/.git --work-tree="{}" pull ;
+gsa=%GIT_INSTALL_ROOT%/usr/bin/find . -mindepth 1 -maxdepth 1 -type d -execdir test -d '{}/.git' ; -exec echo -e "\n{}" ; -exec git --git-dir="{}"/.git --work-tree="{}" status ;
