@@ -76,7 +76,7 @@ local ascii_cwd
 function reset_prompt_filter()
     old_prompt = clink.prompt.value
     
-    local prompt_header = "{admin}{user}{cwd}{git}{npm}\x1b[0m"
+    local prompt_header = "{admin}{user}{cwd}{git}{npm}\x1b[K\x1b[0m"
     local prompt_lhs = "{env}{lamb} \x1b[0m"
     clink.prompt.value = prompt_header .. "\n" .. prompt_lhs
     
