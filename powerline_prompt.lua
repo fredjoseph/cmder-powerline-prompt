@@ -2,6 +2,7 @@
 local color = require('color')
 local gitutil = require('gitutil')
 local JSON = require("JSON")
+local path = require("path")
 
 -- ANSI Sequences (See https://en.wikipedia.org/wiki/ANSI_escape_code#Colors for color codes)
 -- Format : Esc[Value;...;Valuem
@@ -134,7 +135,15 @@ function git_prompt_filter()
     -- No difference for paths whithout special characters (accent...)
     if not git_dir and clink_cwd ~= ascii_cwd then 
         git_dir = gitutil.get_git_dir(ascii_cwd)
-        if git_dir then git_dir = clink_cwd..'/.git' end
+        if git_dir then
+            local path_separator_pattern = "[\\/]";
+            local nb_separator_in_current_dir = select(2, string.gsub(clink_cwd, path_separator_pattern, ""))
+            local nb_separator_in_git_dir = select(2, string.gsub(git_dir, path_separator_pattern, ""))
+            
+            local clink_cwd_git_dir = clink_cwd
+            for i=nb_separator_in_current_dir,nb_separator_in_git_dir,-1 do clink_cwd_git_dir = path.pathname(clink_cwd_git_dir) end
+            git_dir = clink_cwd_git_dir .. '/.git'
+        end
     end
     
     if git_dir then
