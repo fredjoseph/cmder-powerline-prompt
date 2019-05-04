@@ -2,7 +2,6 @@
 
 This is a custom configuration for [Cmder](http://cmder.net/).
 It mainly contains :
-- some aliases
 - a custom prompt inspired by `agnoster` theme
     - `admin` symbol on black backgound (optionnal - not displayed by default)
     - `user@hostname` on black backgound (optionnal - not displayed by default)
@@ -44,31 +43,31 @@ To show symbols correctly:
 Download all files, and place it (or create symbolic links) in `%CMDER_ROOT%/config` folder.
 Restart Cmder to load the custom configuration.
 
-## `cmd` Configuration
+## `cmd` Customizations
 
-All These modifications required to open a new console in `cmder`.
+All these modifications require to open a new console in `cmder`.
 
 ### Path
-You can modify the prompt to display either the full path or only the folder name.
-To do this, add an environment variable `CMDER_CUSTOM_PROMPT_PATH_TYPE` in `user-profile.cmd`
+The prompt can display either the full path (by default) or only the folder name.
+To change it, add an environment variable `CMDER_CUSTOM_PROMPT_PATH_TYPE` in `user-profile.cmd`
 The value could be either:
-- `full` for full path like `C:\Windows\System32` (default value)
-- `folder` for folder name only like `System32`
+- `full` for full path display (`C:\Windows\System32`)
+- `folder` for folder name display (`System32`)
 
 ```bash
 set CMDER_CUSTOM_PROMPT_PATH_TYPE=folder
 ```
 
-You can substitute the user home path by a `~` character (only available with `PROMPT_FULL`)
-To do this, add an environment variable `CMDER_CUSTOM_PROMPT_TILDE_SUBSTITUTION` in `user-profile.cmd` (active by default)
+In `full` path mode, the user home path is substituted by a `~` character
+For disabling this, add an environment variable `CMDER_CUSTOM_PROMPT_TILDE_SUBSTITUTION` in `user-profile.cmd` with the value `false`.
 
 ```bash
 set CMDER_CUSTOM_PROMPT_TILDE_SUBSTITUTION=false
 ```
 
 ### Admin
-You can modify the prompt to display a `High voltage` symbol at the beginning of the prompt when the current user has admin rights.
-To do this, add an environment variable `CMDER_CUSTOM_PROMPT_DISPLAY_ADMIN` in `user-profile.cmd` (inactive by default)
+You can modify the prompt to display a `High voltage` symbol at the beginning of the prompt when the current user has admin rights (inactive by default).
+To do this, add an environment variable `CMDER_CUSTOM_PROMPT_DISPLAY_ADMIN` in `user-profile.cmd` with the value `true`
 
 _This feature is quite slow (approximately 0.2~0.3 second)_
 
@@ -77,8 +76,8 @@ set CMDER_CUSTOM_PROMPT_DISPLAY_ADMIN=true
 ```
 
 ### User
-You can modify the prompt to display the current `user` and `hostname`.
-To do this, add an environment variable `CMDER_CUSTOM_PROMPT_DISPLAY_USER` in `user-profile.cmd` (inactive by default)
+You can modify the prompt to display the current `user` and `hostname` (inactive by default).
+To do this, add an environment variable `CMDER_CUSTOM_PROMPT_DISPLAY_USER` in `user-profile.cmd` with the value `true`
 
 ```bash
 set CMDER_CUSTOM_PROMPT_DISPLAY_USER=true
@@ -87,7 +86,7 @@ set CMDER_CUSTOM_PROMPT_DISPLAY_USER=true
 ## Debug
 The script `debug.lua` displays the time passed in each lua function called.
 
-To active this script, add an environment variable `CLINK_PROMPT_DEBUG` with value `true`
+To active this script, add an environment variable `CLINK_PROMPT_DEBUG` with the value `true`
 
 ```bash
 set CLINK_PROMPT_DEBUG=true
@@ -96,13 +95,12 @@ set CLINK_PROMPT_DEBUG=true
 ## `powershell` Configuration
 
 ### Theme
-You can change the prompt theme.
-To do this, modify the line `Set-Theme <themeName>` with the desired theme in file `my-user-profile.ps1`.
-List of available themes on [`oh-my-posh`](https://github.com/JanJoris/oh-my-posh)
+You can change the prompt theme by modifying the line `Set-Theme <themeName>` with the desired theme in `my-user-profile.ps1`.
+List of available themes [`oh-my-posh`](https://github.com/JanJoris/oh-my-posh)
 
 ### User
 You can modify the prompt to display the current `user` and `hostname`.
-To do this, comment the line `$DefaultUser = $env:USERNAME` in file `my-user-profile.ps1`
+To do this, comment the line `$DefaultUser = $env:USERNAME` in `my-user-profile.ps1`
 
 ## Links
 [ANSI Color Sequence](http://ascii-table.com/ansi-escape-sequences.php)
