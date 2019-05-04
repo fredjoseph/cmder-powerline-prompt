@@ -92,7 +92,7 @@ To active this script, add an environment variable `CLINK_PROMPT_DEBUG` with the
 set CLINK_PROMPT_DEBUG=true
 ```
 
-## `powershell` Configuration
+## `powershell` Customizations
 
 ### Theme
 You can change the prompt theme by modifying the line `Set-Theme <themeName>` with the desired theme in `my-user-profile.ps1`.
