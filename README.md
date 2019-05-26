@@ -2,9 +2,9 @@
 
 This is a custom configuration for [Cmder](http://cmder.net/).
 It mainly contains :
-- a custom prompt inspired by `agnoster` theme
-    - `admin` symbol on black backgound (optionnal - not displayed by default)
-    - `user@hostname` on black backgound (optionnal - not displayed by default)
+- a custom prompt inspired by the `agnoster` theme
+    - `admin` symbol on black backgound (optional - not displayed by default)
+    - `user@hostname` on black backgound (optional - not displayed by default)
     - `current directory path` on blue background
     - `git` folders on green background for clean repo and yellow for dirty
     - `npm` module name and version (black background)
@@ -14,8 +14,8 @@ It mainly contains :
 | with `Ubuntu` theme |
 
 # Requirements
-Download the [Meslo LG M font](https://github.com/powerline/fonts/tree/master/Meslo%20Slashed)  
-You are able to use any font in `Cmder`, but this font contains the symbols included in the prompt.
+Download [Meslo LG M font](https://github.com/powerline/fonts/tree/master/Meslo%20Slashed)  
+You are able to use any font in `Cmder`, but this font must contain the symbols included in the prompt.
 
 ## Powershell dependencies
 These dependencies are required only if you use a `powershell` console
